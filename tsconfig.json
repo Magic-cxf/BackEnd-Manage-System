@@ -18,6 +18,8 @@
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]  //项目中可以使用的哪些库的类型
   },
+  //包含哪些需要解析的文件
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+  //排除  排除node_modules不需要编译
   "exclude": ["node_modules"]
 }
