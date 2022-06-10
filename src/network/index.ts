@@ -13,10 +13,10 @@
 
 // export { BASE_URL, BASE_NAME }
 
-import bmsRequest from './main'
-import { BASE_TIMEOUT, BASE_URL } from './config'
+import bmsRequest from "./main"
+import { BASE_TIMEOUT, BASE_URL } from "./config"
 
-import { ElLoading } from 'element-plus'
+import { ElLoading } from "element-plus"
 
 //封装一个axios模块
 
@@ -27,20 +27,20 @@ const BMSRequest = new bmsRequest({
   timeout: BASE_TIMEOUT,
   interceptors: {
     requestInterceptor: (config) => {
-      const token = 'token ceshi'
+      const token = "token ceshi"
       loadingInstance = ElLoading.service({
         lock: true,
-        text: 'loading'
+        text: "loading"
       })
       if (token && config.headers) {
         config.headers.Authorization = token
       }
-      console.log('请求拦截成功')
+      console.log("请求拦截成功")
       return config
     },
     responseInterceptor(res) {
       loadingInstance.close()
-      console.log('响应拦截成功！')
+      console.log("响应拦截成功！")
       console.log(res)
       return res.data
     }

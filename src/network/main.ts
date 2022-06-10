@@ -4,8 +4,8 @@
   @time:2022-6-9
 */
 
-import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
-import type { BMSRequest, BMSRequestConfig } from './type'
+import axios, { AxiosInstance, AxiosRequestConfig } from "axios"
+import type { BMSRequest, BMSRequestConfig } from "./type"
 
 class bmsRequest {
   private instance: AxiosInstance

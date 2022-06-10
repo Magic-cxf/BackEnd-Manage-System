@@ -1,4 +1,4 @@
-import type { AxiosRequestConfig, AxiosResponse } from 'axios'
+import type { AxiosRequestConfig, AxiosResponse } from "axios"
 
 export interface BMSRequest {
   //设置拦截器的接口
