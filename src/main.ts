@@ -15,4 +15,6 @@ BMSRequest.request({
     name: 'cxf',
     age: 10
   }
+}).then((res) => {
+  console.log(res)
 })

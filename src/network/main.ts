@@ -23,7 +23,7 @@ class bmsRequest {
     )
   }
   request(config: AxiosRequestConfig) {
-    this.instance.request(config)
+    return this.instance.request(config)
   }
 }
 
