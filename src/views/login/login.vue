@@ -3,8 +3,8 @@
     <div class="login">
       <h1>后台管理系统</h1>
       <div class="loginPlatform">
-        <el-tabs type="border-card" class="demo-tabs" stretch>
-          <el-tab-pane>
+        <el-tabs type="border-card" class="demo-tabs" stretch v-model="tabName">
+          <el-tab-pane name="account">
             <template #label>
               <span class="custom-tabs-label">
                 <el-icon><Avatar /></el-icon>
@@ -13,14 +13,14 @@
             </template>
             <loginAccount ref="accountRef" />
           </el-tab-pane>
-          <el-tab-pane>
+          <el-tab-pane name="phone">
             <template #label>
               <span class="custom-tabs-label">
                 <el-icon><Cellphone /></el-icon>
                 <span>手机登陆</span>
               </span>
             </template>
-            <loginRegister />
+            <loginRegister ref="prhoneRef" />
           </el-tab-pane>
         </el-tabs>
       </div>
@@ -40,10 +40,15 @@ import loginRegister from "./loginChildren/loginRegister.vue"
 
 const isKeepPassword = ref(false)
 const accountRef = ref<InstanceType<typeof loginAccount>>() //类型限制
-// const accountRef = ref()
+const prhoneRef = ref<InstanceType<typeof loginRegister>>()
+const tabName = ref("account")
 
 const handleLoginAccount = () => {
-  accountRef.value?.loginAction()
+  if (tabName.value === "account") {
+    accountRef.value?.loginAction(isKeepPassword.value)
+  } else {
+    prhoneRef.value?.loginAction()
+  }
 }
 </script>
 <style lang="scss" scoped>
