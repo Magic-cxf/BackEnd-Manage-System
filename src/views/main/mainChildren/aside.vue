@@ -58,7 +58,7 @@
       </template>
       <el-menu-item index="7-1">员工管理</el-menu-item>
     </el-sub-menu>
-    <el-sub-menu index="8">
+    <el-sub-menu index="8" :disabled="false">
       <template #title>
         <el-icon><List /></el-icon>
         <span>财务部</span>
